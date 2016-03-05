@@ -49,4 +49,4 @@ NOTES FOR LATER VERSIONS
 
 Add more error-checking.  (Check that commands are entered properly and that the window height is a positive integer.)
 
-8====D ~
+8==================D ~
