@@ -31,6 +31,10 @@ COMPONENT: class Buffer
 
 A buffer for a simple file viewer.  Holds the lines of text and executes commands on them.  Displays the contents of the buffer.  See program specification for details on commands.
 
+Public Data Member:
+
+o vector<string> links -- maps each anchor index to corrosponding string filename
+
 Public methods:
           
 o Buffer() 
@@ -47,9 +51,22 @@ o const string & get_file_name() const
 
 o void move_to_next_page() 
   void move_to_previous_page() 
-  bool open(const string & file_name)
+ 
+  Executes the corresponding file viewer command on the buffer.  See program specification for details.  The method open returns true if successful.
   
-    Executes the corresponding file viewer command on the buffer.  See program specification for details.  The method open returns true if successful.
+o bool open(const string & file_name)
+    
+    opens the file
+    NEW: calls "reformat(string)" on each line, then adds to the vector of strings
+    
+o void reformat(string & line)
+    
+    use stl find() to get anchor, map filename, reformat line
+    
+o bool go(const int & number)
+
+    opens the file corrosponding to "number" in links vector
+    includes error checking similar to open
     
 o void set_window_height(int h)
 
