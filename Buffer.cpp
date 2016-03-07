@@ -2,12 +2,14 @@
 
 #include "Buffer.h"
 
+#include <vector>
+#include <algorithm>
 #include <fstream>
 #include <iomanip>
 #include <iostream>
-using std::cout;
 #include <string>
-using std::string;
+#include <string.h>
+using namespace std;
 
 void Buffer::display() const
 {
@@ -27,11 +29,39 @@ bool Buffer::open(const string & new_file_name)
     v_lines.clear();
     // Note: the vector is cleared only after we know the file
     // opened successfully.
-
+    
     string line;
-    while (getline(file, line)) v_lines.push_back(line);
-
+    while (getline(file, line)){
+	reformat(line);
+	v_lines.push_back(line);
+        
+    }
     file_name = new_file_name;
     ix_top_line = 0;
     return true;
+
 }
+
+void Buffer::reformat(string & thisline){
+
+	doneReformatting = false;
+
+
+	
+	while(doneReformatting == false){  //It works???
+		string t = "<a"; //T for "Target". This defines the target that I'm searching for. I initialize it up here in case I want to modify it later.		
+		string e = ">"; //E for "End". This defines the end of what I'm searching for.
+		int start = thisline.find(t);
+		
+		if(start != string::npos){
+			int end = thisline.find(t);
+			thisline.replace(start+1, end+1, "PENIS");
+		}
+		else{
+			doneReformatting  = true;
+		}
+	
+	}
+}
+
+
