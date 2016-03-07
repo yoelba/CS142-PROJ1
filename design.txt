@@ -59,7 +59,7 @@ o bool open(const string & file_name)
     opens the file
     NEW: calls "reformat(string)" on each line, then adds to the vector of strings
     
-o void reformat(string & line)
+o void reformat(string & thisline)
     
     use stl find() to get anchor, map filename, reformat line
     
