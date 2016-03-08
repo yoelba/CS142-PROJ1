@@ -42,20 +42,27 @@ bool Buffer::open(const string & new_file_name)
 
 }
 
-void Buffer::reformat(string & thisline){
+void Buffer::reformat(string & thisline){ //Alright Tom, have at it.
 
 	doneReformatting = false;
 
 
 	
-	while(doneReformatting == false){  //It works???
-		string t = "<a"; //T for "Target". This defines the target that I'm searching for. I initialize it up here in case I want to modify it later.		
-		string e = ">"; //E for "End". This defines the end of what I'm searching for.
+	while(doneReformatting == false){
+		string t = "<a "; //T for "Target". This defines the target that I'm searching for. Initially, I'm looking for the beginning of an anchor.		
+		string e = ".txt"; //E for "End". This defines the end of what I'm searching for initially. Right now, it is the .txt.
+		string f = ">"; //Let's find the > character to end our anchor text.
+	
 		int start = thisline.find(t);
 		
-		if(start != string::npos){
-			int end = thisline.find(t);
-			thisline.replace(start+1, end+1, "PENIS");
+		if(start != string::npos){ //This is true if the find function DID find some <a character. Otherwise, we end the loop and go to the next line if there is one.
+
+			int end = thisline.find(e);
+			thisline.replace(start, end-start+5, "<<");//Begin printing the reformatted text: we begin with a <<
+			
+			int finalPart = thisline.find(f, start); //It's important to begin this search at "start" so that if there's an anchor earlier in the line we will skip it's ">>" characters.
+			thisline.replace(finalPart, 1, ">>"); //Turn our current anchor's > into >> Now we're done reformatting our string "line"!!
+
 		}
 		else{
 			doneReformatting  = true;

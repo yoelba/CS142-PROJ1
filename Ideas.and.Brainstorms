@@ -1,0 +1,14 @@
+Ideas:
+  STL find to find <a characters
+    PUT IT IN BUFFER CONSTRUCTOR
+    Reformat text of entire file when we shove it in that buffer 
+      Someone comes up with formatting function?
+    Store file names in a vector of strings
+      Or a map? Map sounds good
+  new command to say "gimmie that link"
+  
+  
+  Name and Coding Conventions
+    "Source text" vs "buffer text"
+    We'll each have our very own branch
+  
