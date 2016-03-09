@@ -44,11 +44,10 @@ bool Buffer::open(const string & new_file_name)
 
 void Buffer::reformat(string & thisline){ //Alright Tom, have at it.
 
-	doneReformatting = false;
 
 
 	
-	while(doneReformatting == false){
+	while(true){
 		string t = "<a "; //T for "Target". This defines the target that I'm searching for. Initially, I'm looking for the beginning of an anchor.		
 		string e = " "; //E for "End". This defines the end of what I'm searching for initially.
 		string f = ">"; //Let's find the > character to end our anchor text.
@@ -65,7 +64,7 @@ void Buffer::reformat(string & thisline){ //Alright Tom, have at it.
 
 		}
 		else{
-			doneReformatting  = true;
+			break;
 		}
 	
 	}
