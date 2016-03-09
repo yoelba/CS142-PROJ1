@@ -12,6 +12,9 @@ public:
     void move_to_previous_page();
     bool open(const std::string & file_name);
     void set_window_height(int h) { window_height = h; }
+    void reformat(std::string & thisline);
+    bool doneReformatting = false;
+
 
 private:
     std::vector<std::string> v_lines;
