@@ -28,7 +28,7 @@ void FileViewer::display()
     cout << long_separator << endl;
     buffer.display();
     cout << long_separator << endl;
-    cout << "  next  previous  open  quit\n";
+    cout << "  next  previous  open  quit  go\n";
     cout << short_separator << endl;
 }
 
@@ -73,11 +73,19 @@ void FileViewer::run()
                 done = true;
                 break;
             }
+
+            case 'g': {
+                int link_number;
+                cout << "link number: ";
+                cin >> link_number;
+                buffer.go(link_number);
+
+            }
+
         };
         cout << endl;
     } // while
 
     return;
 }
-
 
