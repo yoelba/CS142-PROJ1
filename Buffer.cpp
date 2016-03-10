@@ -28,6 +28,8 @@ bool Buffer::open(const string & new_file_name)
     if (!file) return false;
     
 	v_lines.clear();
+	links.clear();
+	link_count = 1;
     // Note: the vector is cleared only after we know the file
     // opened successfully.
     
@@ -54,7 +56,7 @@ void Buffer::reformat(string & thisline){
 		if(start != string::npos){ //true if find() found '<a'
 					
 			int end = thisline.find(e,start+3);
-			links.push_back( thisline.substr(start+3, end-3) ); //add filename to vector of links
+			links.push_back( thisline.substr(start+3, end-start-3) ); //add filename to vector of links
 			thisline.replace(start, end-start+1, "<<");//printing part of the reformatted text
 						
 			int finalPart = thisline.find(f, start); 
@@ -69,9 +71,10 @@ void Buffer::reformat(string & thisline){
 	}
 }
 
-void Buffer::go(int line){ // Should this be inline in the header file?
+bool Buffer::go(int line){ // Should this be inline in the header file?
     int index = line - 1;
-    cout << links.at(index);
-    open(links.at(index));
+    // cout << links.at(index);
+    if (!open(links.at(index)) ) return false;
+	return true;
 }
 

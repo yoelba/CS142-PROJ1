@@ -14,7 +14,7 @@ public:
     void set_window_height(int h) { window_height = h; }
     void reformat(std::string & thisline);
     bool doneReformatting = false;
-    void go(int linum);
+    bool go(int linum);
     
     std::vector<std::string> links;
 
