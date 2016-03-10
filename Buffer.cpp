@@ -45,7 +45,6 @@ bool Buffer::open(const string & new_file_name)
 
 void Buffer::reformat(string & thisline){ //Alright Tom, have at it.
 
-
 	while(true){
 		string t = "<a "; //T for "Target". This defines the target that I'm searching for. Initially, I'm looking for the beginning of an anchor.		
 		string e = " "; //E for "End". This defines the end of what I'm searching for initially.
@@ -54,8 +53,7 @@ void Buffer::reformat(string & thisline){ //Alright Tom, have at it.
 		int start = thisline.find(t);
 		
 		if(start != string::npos){ //This is true if the find function DID find some <a character. Otherwise, we end the loop and go to the next line if there is one.
-			
-			
+		
 			int end = thisline.find(e,start+3);
 			links.push_back( thisline.substr(start+3, end) );
 			thisline.replace(start, end-start+1, "<<");//Begin printing the reformatted text: we begin with a <<
@@ -72,4 +70,10 @@ void Buffer::reformat(string & thisline){ //Alright Tom, have at it.
 	}
 }
 
+void Buffer::go(int linum){
+    //linum is the link they want
+    //vecnum is the index of the link
+    int vecnum = linum - 1;
+    Buffer::open(links.at(vecnum));
+}
 
