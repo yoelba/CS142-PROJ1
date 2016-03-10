@@ -75,11 +75,16 @@ void FileViewer::run()
             }
 
             case 'g': {
-                int link_number;
                 cout << "link number: ";
+                int link_number;
                 cin >> link_number;
-                buffer.go(link_number);
-
+				cout << buffer.links.at(link_number-1);
+					//buffer.go(link_number); <-- I think go is an unnecessary function
+				if (!buffer.open( buffer.links.at(link_number-1) ) )
+					error_message = "Could not open " + buffer.links.at(link_number-1);
+                break;
+				
+		break;
             }
 
         };

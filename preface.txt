@@ -10,7 +10,7 @@ there are computational problems for which no program
 exists.  And these are not ill-defined problems (Can a 
 computer fall in love?) or uninteresting toy problems.  
 These are precisely defined problems with important 
-practical applications.
+practical applications.  <a odyssey.txt odyssey>
 
 Theoretical computer science can be briefly described as 
 the mathematical study of computation.  These notes will 
@@ -21,7 +21,7 @@ why certain computational problems cannot be solved.  You
 will also learn several concepts and techniques that have 
 important applications.  Chapter 1 provides a more detailed 
 introduction to this rich and beautiful area of computer 
-science.  
+science.   <a bat_and_weasels.txt bat_and_weasels>
 
 These notes were written for the course CS345 Automata 
 Theory and Formal Languages taught at Clarkson University.  
@@ -29,3 +29,5 @@ The course is also listed as MA345 and CS541.  The
 prerequisites are CS142 (a second course in programming) 
 and MA211 (a course on discrete mathematics in which 
 students also gain experience writing mathematical proofs).
+
+<a contents.txt contents>

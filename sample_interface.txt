@@ -11,7 +11,7 @@ preface.txt
   9  there are computational problems for which no program
  10  exists.  And these are not ill-defined problems (Can a
 --------------------------------------------------
-  next  previous  open  quit go
+  next  previous  open  quit 
 -------
 command: o
 file: introduction.txt
