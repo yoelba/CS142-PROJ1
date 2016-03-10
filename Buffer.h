@@ -15,13 +15,14 @@ public:
     void reformat(std::string & thisline);
     bool doneReformatting = false;
     
-    vector<string> links;
+    std::vector<std::string> links;
 
 private:
     std::vector<std::string> v_lines;
     int ix_top_line = 0;
     std::string file_name;
     int window_height;
+    int link_count = 1;
 };
 
 inline void Buffer::move_to_next_page()
