@@ -2,6 +2,8 @@
 
 #include "Buffer.h"
 
+#include <vector>
+using std::vector;
 #include <fstream>
 #include <iomanip>
 #include <iostream>
@@ -34,4 +36,11 @@ bool Buffer::open(const string & new_file_name)
     file_name = new_file_name;
     ix_top_line = 0;
     return true;
+}
+
+void Buffer::go(int linum){
+    //linum is the link they want
+    //vecnum is the index of the link
+    int vecnum = linum - 1;
+    Buffer::open(links.at(vecnum));
 }
