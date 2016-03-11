@@ -1,0 +1,47 @@
+# depslib dependency file v1.0
+1392679174 source:c:\users\alexis\documents\cs142\prep\fileviewer\fileviewer.cpp
+	"FileViewer.h"
+	<iostream>
+	<string>
+
+1392680420 c:\users\alexis\documents\cs142\prep\fileviewer\fileviewer.h
+	<string>
+	"Buffer.h"
+
+1392680843 c:\users\alexis\documents\cs142\prep\fileviewer\buffer.h
+	<vector>
+	<string>
+
+1392677212 source:c:\users\alexis\documents\cs142\prep\fileviewer\test.cpp
+	"FileViewer.h"
+
+1392680353 source:c:\users\alexis\documents\cs142\prep\fileviewer\buffer.cpp
+	"Buffer.h"
+	<fstream>
+	<iomanip>
+	<iostream>
+	<string>
+
+1392680813 source:c:\users\alexis\documents\cs142\cours\fileviewer\buffer.cpp
+	"Buffer.h"
+	<fstream>
+	<iomanip>
+	<iostream>
+	<string>
+
+1393109379 c:\users\alexis\documents\cs142\cours\fileviewer\buffer.h
+	<vector>
+	<string>
+
+1392680820 source:c:\users\alexis\documents\cs142\cours\fileviewer\fileviewer.cpp
+	"FileViewer.h"
+	<iostream>
+	<string>
+
+1392680420 c:\users\alexis\documents\cs142\cours\fileviewer\fileviewer.h
+	<string>
+	"Buffer.h"
+
+1392677212 source:c:\users\alexis\documents\cs142\cours\fileviewer\test.cpp
+	"FileViewer.h"
+

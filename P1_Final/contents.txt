@@ -1,0 +1,10 @@
+Contents:
+	<a ass_and_grasshopper.txt ass_and_grasshopper>
+	<a bat_and_weasels.txt bat_and_weasels>
+	<a cicero.txt cicero>
+	<a contents.txt contents>
+	<a empty.txt empty>
+	<a odyssey.txt odyssey>
+	<a preface.txt preface>
+	<a sampletext.txt sampletext>
+	<a wolf_and_lamb.txt wolf_and_lamb>
