@@ -14,13 +14,13 @@ o void run()
 
     Runs the viewer.  
     
-    Implementation: A simple loop that displays the buffer, the menu of commands, reads a command and executes it.  The displaying is delegated to private method display.
+    Implementation: A simple loop that displays the buffer, the menu of commands, reads a command and executes it. It is set to a specific height and width specified by user. The displaying is delegated to private method display.
 
 Private method:
 
 o void display()
 
-    Displays the buffer and menu of commands, including an error message (if any), the name of the file and the three lines of dashes.  See program specification for details.  
+    Displays the buffer and menu of commands, including an error message (if any), the name of the file and the three lines of dashes. Included in the width of the buffer is the six space margin that contains the line numer, thus the line length printed from the file is six characters shorter. If the line from the file is longer than the desired line in the console, it indents the line one space to denote the console lines from the same line in the file. The lines are given numbers based upon it's number on the console. See program specification for details.  
 
 Implementation: Holds the lines of text in a Buffer object.  The displaying of the buffer contents and the execution of the commands is delegated to the Buffer object.
 
@@ -51,9 +51,20 @@ o void move_to_next_page()
   
     Executes the corresponding file viewer command on the buffer.  See program specification for details.  The method open returns true if successful.
     
+o void go(int & link)
+    opens file that corresponds with link number provided by user.
+    
+o void reformat(string & thisline)
+    reformats buffer so that anchors <a anchor.txt detail> is printed <<detail>>[#]
+    
+o void trim(vector & v_lines)
+    reformats the vector provided to open so that the lines are set to a specific length designated by user. If a word is longer than the specified length, it prints out the entire line.
+    
 o void set_window_height(int h)
+    Self-explanatory
 
-    Self-explanatory.
+o vector<std::string> links
+    the vector that holds the file names from the anchoors. This vector provides the links to the go function
 
-Implementation:  Stores each line of text as a string and all the lines in a vector.  Maintains the index of the line currently displayed at the top of the window, as well as the name of the file and the window height.
+Implementation:  Stores each line of text as a string of length designated by user and all the lines in a vector (c_lines). Maintains the index of the line currently displayed at the top of the window, as well as the name of the file and the window height.
              
