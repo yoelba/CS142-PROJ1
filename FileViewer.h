@@ -14,5 +14,6 @@ private:
 
     Buffer buffer;
     int window_height;
+    int line_length;
     std::string error_message;
 };

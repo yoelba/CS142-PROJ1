@@ -39,6 +39,11 @@ void FileViewer::run()
     cin.get();  // '\n'
     cout << '\n';
     buffer.set_window_height(window_height);
+    cout << "Line Length? ";
+    cin >> line_length;   
+    cin.get();
+    buffer.set_line_length(line_length);
+    
 
     bool done = false;
     while (!done) {
